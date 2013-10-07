@@ -19,27 +19,27 @@
 		.form-group
 			= f.label :stock_name, :class => 'col-lg-4 control-label'
 			.col-lg-6
-				= f.text_field :stock_name, :class => 'form-control', :placeholder => 'Enter name...'
+				= f.text_field :stock_name, :class => 'form-control', :placeholder => 'Enter name...', :data => {'toggle' => 'tooltip', 'original-title' => 'Please enter a unique name'}
 		
 		.form-group
 			= f.label :price, :class => 'col-lg-4 control-label'
 			.col-lg-6
-				= f.text_field :price, :class => 'form-control', :placeholder => 'Enter price...'
+				= f.text_field :price, :class => 'form-control', :placeholder => 'Enter price...', :data => {'toggle' => 'tooltip', 'original-title' => 'Please enter a price (It can be a decimal)'}
 		
 		.form-group
 			= f.label :quantity, :class => 'col-lg-4 control-label'
 			.col-lg-6
-				= f.text_field :quantity, :class => 'form-control', :placeholder => 'Enter quantity...'
+				= f.text_field :quantity, :class => 'form-control', :placeholder => 'Enter quantity...', :data => {'toggle' => 'tooltip', 'original-title' => 'Please enter a quantity (It can only be a whole number)'}
 		
 		.form-group
 			= f.label :percentage, :class => 'col-lg-4 control-label'
 			.col-lg-6
-				= f.text_field :percentage, :class => 'form-control', :placeholder => 'Enter percentage...'
+				= f.text_field :percentage, :class => 'form-control', :placeholder => 'Enter percentage...', :data => {'toggle' => 'tooltip', 'original-title' => 'Please enter a percentage (It can be a decimal)'}
 
 		.form-group
 			= f.label :years, :class => 'col-lg-4 control-label'
 			.col-lg-6
-				= f.text_field :years, :class => 'form-control', :placeholder => 'Enter years...'
+				= f.text_field :years, :class => 'form-control', :placeholder => 'Enter years...', :data => {'toggle' => 'tooltip', 'original-title' => 'Please enter the years (It can only be a whole number)'}
 
 		.form-group
 			.col-lg-offset-4.col-lg-6

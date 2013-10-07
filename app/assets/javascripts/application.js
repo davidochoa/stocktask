@@ -17,3 +17,10 @@
 
 // Include all twitter's javascripts
 //= require twitter/bootstrap
+
+$(document).ready(function() {
+	$('input.form-control').tooltip({
+		container: 'body',
+		placement: 'right'
+	});
+});
