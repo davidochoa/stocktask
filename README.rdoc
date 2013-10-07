@@ -1,28 +1,78 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+= Non Functional Requirements:
+# 
+# The application must be implemented in Rails 4
+# Twitter bootstrap 3 UI must be used
+# Source code must be placed into Github as open source project
+# Application must be deployed into Heroku
+# This feature must be placed into applications feature directory
+# This feature must be runnable by cucumber. Only small changes to this feature can be made if needed.
+# Challenge result is link to the application repository
 
-Things you may want to cover:
+= Functional Requirements:
 
-* Ruby version
+Feature: Calculate stock productivity
+  In order to manage and estimate my stock
+  I must be able to calculate and store stock data 
 
-* System dependencies
+Scenario: Calculate prices
+  Given the web applications runs on Heroku 
 
-* Configuration
+  When I open the application url
+  Then I must see the front page with application title "Stock productivity calculator"
 
-* Database creation
+  When I press button "Enter new stock"
+  Then I must see the page with title "Enter stock details" 
+  And I must be able to enter the following values:
+    | stock_name | Company XYZ | required string  |
+    | price      | 2.00        | required decimal |
+    | quantity   | 200         | required integer |
+    | percentage | 3.00        | required decimal |
+    | years      | 10          | required integer | 
+  And I press button "Calculate"
+  Then I must see the page with title "Calculation result"
+  And I must see the original input data:
+    | Stock name | Company XYZ | 
+    | Price      | 2.00        |
+    | Quantity   | 200         |
+    | Percentage | 3.00        |
+    | Years      | 10          |
+  And list of stock values for each year:
+    | 0  | 400.00 |
+    | 1  | 412.00 |
+    | 2  | 424.36 |
+    | 3  | 437.09 |
+    | 4  | 450.20 |
+    | 5  | 463.71 |
+    | 6  | 477.62 |
+    | 7  | 491.95 |
+    | 8  | 506.71 |
+    | 9  | 521.91 |
+    | 10 | 537.57 |
+  And the stock growth is shown as a visual graph
+  And the stock data must be saved into the database for later review
 
-* Database initialization
+  When I click "Back"
+  Then I must see the page with title "Enter stock details" 
 
-* How to run the test suite
+Scenario: View exisiting calculations
+  Given the web applications runs on Heroku 
+  Given the system has already calculated stocks  
+    | stock_name   | price  | quantity | percentage | years |
+    | Apple        | 172.00 | 10       | 5.00       | 10    |
+    | Microsoft    | 30.00  | 25       | 1.25       | 5     |
 
-* Services (job queues, cache servers, search engines, etc.)
+  When I open the application url
+  Then I must see the front page with application title "Stock productivity calculator"
+  And I must see a table of saved stocks:
+    | Stock name   | Price  | Quantity | Percentage | Years |
+    | Apple        | 172.00 | 10       | 5.00       | 10    |
+    | Microsoft    | 30.00  | 25       | 1.25       | 5     |
 
-* Deployment instructions
+  When I click on the calculated line "Company XYZ" 
+  Then I must see the already calculated data
 
-* ...
+  When I click "Back"
+  Then I must see the front page with application title "Stock productivity calculator"
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
