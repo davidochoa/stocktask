@@ -9,11 +9,10 @@
 	%h3.col-md-3
 		Stock data
 	.header-btns
-		.h-btn
+		.h-btn.btn-group
 			= link_to edit_stock_path(@stock), :class => "btn btn-primary" do
 				%i.glyphicon.glyphicon-pencil
 				Edit data
-		.h-btn
 			= link_to @stock,  data: { confirm: 'Do you want to delete stock data?' }, :method => :delete, :class => "btn btn-danger" do
 				%i.glyphicon.glyphicon-remove-sign
 				Delete data
