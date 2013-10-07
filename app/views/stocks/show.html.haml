@@ -1,0 +1,68 @@
+%h1
+	=link_to root_path do
+		%i.glyphicon.glyphicon-home
+	=title 'Calculation result'
+
+%hr
+
+.row
+	%h3.col-md-3
+		Stock data
+	.header-btns
+		.h-btn
+			= link_to edit_stock_path(@stock), :class => "btn btn-primary" do
+				%i.glyphicon.glyphicon-pencil
+				Edit data
+		.h-btn
+			= link_to @stock,  data: { confirm: 'Do you want to delete stock data?' }, :method => :delete, :class => "btn btn-danger" do
+				%i.glyphicon.glyphicon-remove-sign
+				Delete data
+
+%table.table.table-hover.stock-data
+	%tr
+		%td
+			Stock name
+		%td
+			= @stock.stock_name
+	%tr
+		%td
+			Price
+		%td
+			= '%.2f' % @stock.price
+	%tr
+		%td
+			Quantity
+		%td
+			= @stock.quantity
+	%tr
+		%td
+			Percentage
+		%td
+			= '%.2f' % @stock.percentage
+	%tr
+		%td
+			Years
+		%td
+			= @stock.years
+
+%h4.ribbon
+	Stock values
+%table.table.table-hover.stock-values
+	%thead
+		%tr
+			%th
+				Year
+			%th
+				Value
+	%tbody
+		- i = 0
+		- @stock.stock_list_values.each do |year, value|
+			%tr
+				%td
+					= year
+				%td
+					= '%.2f' % value
+%h4.ribbon
+	Stock growth
+
+= line_chart(@stock.stock_list_values_dates)

@@ -1,0 +1,48 @@
+%h1
+	=link_to root_path do
+		%i.glyphicon.glyphicon-home
+	=title 'Enter stock details'
+
+%hr
+
+- if @stock.errors.any?
+	.alert.alert-danger
+		%button.close{:data => {:dismiss => 'alert'}}
+			&times;
+		- @stock.errors.full_messages.each do |message|
+			= message
+			%br
+
+.form
+	= form_for @stock, :html => {:class => 'form-horizontal'} do |f|
+		
+		.form-group
+			= f.label :stock_name, :class => 'col-lg-4 control-label'
+			.col-lg-6
+				= f.text_field :stock_name, :class => 'form-control', :placeholder => 'Enter name...'
+		
+		.form-group
+			= f.label :price, :class => 'col-lg-4 control-label'
+			.col-lg-6
+				= f.text_field :price, :class => 'form-control', :placeholder => 'Enter price...'
+		
+		.form-group
+			= f.label :quantity, :class => 'col-lg-4 control-label'
+			.col-lg-6
+				= f.text_field :quantity, :class => 'form-control', :placeholder => 'Enter quantity...'
+		
+		.form-group
+			= f.label :percentage, :class => 'col-lg-4 control-label'
+			.col-lg-6
+				= f.text_field :percentage, :class => 'form-control', :placeholder => 'Enter percentage...'
+
+		.form-group
+			= f.label :years, :class => 'col-lg-4 control-label'
+			.col-lg-6
+				= f.text_field :years, :class => 'form-control', :placeholder => 'Enter years...'
+
+		.form-group
+			.col-lg-offset-4.col-lg-6
+				= button_tag(type: 'submit', class: "btn btn-primary") do
+					%i.glyphicon.glyphicon-ok-sign
+					Calculate

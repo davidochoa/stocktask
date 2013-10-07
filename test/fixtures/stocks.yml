@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stock_name: Apple
+  price: 172.00
+  quantity: 10
+  percentage: 5.00
+  years: 10
+
+two:
+  stock_name: Microsoft
+  price: 30
+  quantity: 25
+  percentage: 1.25
+  years: 5

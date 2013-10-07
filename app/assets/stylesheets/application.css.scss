@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+@import "twitter/bootstrap";
+
+
+ body {
+ 	background-color: #eee !important;
+ }
+
+.container {
+	background-color: #fff;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	box-shadow: 0px 0px 20px 2px #ddd;
+	-webkit-box-shadow: 0px 0px 20px 2px #ddd;
+	margin-bottom: 50px;
+	padding: 15px 20px 35px;
+	width: 890px !important;
+}
+
+h1 {
+	text-align: center;
+}
+
+h1 a:hover {
+	text-decoration: none;
+}
+
+h4.ribbon {
+	background-color: #eee;
+	padding: 5px 10px;
+}
+
+.form .form-horizontal {
+	margin: 0 auto;
+	max-width: 450px;
+}
+
+.form-horizontal .control-label {
+	padding-right: 20px;
+}
+
+.header-btns {
+	display: inline-block;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	padding-right: 15px;
+	text-align: right;
+	width: 100%;
+}
+
+.header-btns .h-btn {
+	display: inline-block;
+	width: 20%;
+}
+
+.table.stock-data tr td:first-child{
+	font-weight: bold;
+}
+
+@media (min-width: 992px) {
+	.header-btns {
+		width: 75%;
+	}
+}

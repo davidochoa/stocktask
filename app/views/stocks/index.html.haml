@@ -1,0 +1,50 @@
+%h1
+	=link_to root_path do
+		%i.glyphicon.glyphicon-home
+	=title 'Stock productivity calculator'
+
+%hr
+
+%table.table.table-hover
+	%thead
+		%tr
+			%th
+				Stock name
+			%th
+				Price
+			%th
+				Quantity
+			%th
+				Percentage
+			%th
+				Years
+			%th
+				Edit
+			%th
+				Delete
+	%tbody
+		- @stocks.each do |stock|
+			%tr
+				%td
+					= link_to stock.stock_name, stock
+				%td
+					= '%.2f' % stock.price
+				%td
+					= stock.quantity
+				%td
+					= '%.2f' % stock.percentage
+				%td
+					= stock.years
+				%td
+					= link_to edit_stock_path(stock) do
+						%span.label.label-primary
+							Edit
+				%td
+					= link_to stock, data: { confirm: 'Do you want to delete stock data?' }, :method => :delete do
+						%span.label.label-danger
+							Delete
+
+#enter-new
+	=link_to new_stock_path, :class => "btn btn-default" do
+		%i.glyphicon.glyphicon-plus-sign
+		Enter new stock
