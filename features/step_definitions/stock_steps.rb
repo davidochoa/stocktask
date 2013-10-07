@@ -1,5 +1,6 @@
-Given(/^The web applications runs on Heroku$/) do
-  pending # express the regexp above with the code you wish you had
+Given /^the web applications runs on (.*?)$/ do |name|
+  host = Socket.gethostname
+  expect(host.downcase.include? name.downcase).to be_true
 end
 
 When /^I open the application url$/ do

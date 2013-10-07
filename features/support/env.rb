@@ -7,6 +7,7 @@
 require 'cucumber/rails'
 require 'selenium-webdriver'
 require 'rspec/expectations'
+require 'socket'
  
 Capybara.default_driver = :selenium
 

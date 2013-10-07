@@ -47,20 +47,20 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: deskrock_stockapp_test
+  database: diinhm74omu95
   pool: 5
-  username: david
-  password:
-  host: localhost
+  username: lghtswgmcdkzxh
+  password: ogEhe1JXOI1v0CJVZirSOZbW93
+  host: ec2-54-227-239-195.compute-1.amazonaws.com
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: deskrock_stockapp_production
+  database: ddg49bi75i45gk
   pool: 5
-  username: david
-  password:
-  host: localhost
+  username: hlwtuxdwuzmecs
+  password: Rl4pjHa4kvIqUGRRPqJGd3h1r_
+  host: ec2-54-225-123-71.compute-1.amazonaws.com
 
 cucumber:
   <<: *test

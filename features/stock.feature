@@ -13,7 +13,7 @@ Feature: Calculate stock productivity
   I must be able to calculate and store stock data 
 
 Scenario: Calculate prices
-  Given The web applications runs on Heroku 
+  Given the web applications runs on Heroku 
 
   When I open the application url
   Then I must see the front page with application title "Stock productivity calculator"
