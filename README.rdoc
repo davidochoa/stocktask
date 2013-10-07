@@ -1,14 +1,14 @@
 == README
 
 = Non Functional Requirements:
-# 
-# The application must be implemented in Rails 4
-# Twitter bootstrap 3 UI must be used
-# Source code must be placed into Github as open source project
-# Application must be deployed into Heroku
-# This feature must be placed into applications feature directory
-# This feature must be runnable by cucumber. Only small changes to this feature can be made if needed.
-# Challenge result is link to the application repository
+ 
+- The application must be implemented in Rails 4
+- Twitter bootstrap 3 UI must be used
+- Source code must be placed into Github as open source project
+- Application must be deployed into Heroku
+- This feature must be placed into applications feature directory
+- This feature must be runnable by cucumber. Only small changes to this feature can be made if needed.
+- Challenge result is link to the application repository
 
 = Functional Requirements:
 
